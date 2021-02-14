@@ -1,23 +1,17 @@
-/*Создайте функцию, которая принимает 1 аргумент (название произвольное)*/
+let week = ['воскресенье ', 'понедельник ', 'вторник ', 'среда ', 'четверг ', 'пятница ', 'суббота '];
 
-function sTr(x) {
-    if (typeof(x) !== "string") {
-        /*— Если в качестве аргумента передана не строка - функция оповещает об этом пользователя*/
-
-        console.log("Это не строка");
-       
-     }else if (typeof(x) === "string")
-         x = x.toString()
-                 /*В полученной (как аргумент) строке функция должна убрать все пробелы в начале и в конце*/
-       x = x.trim();
-       //console.log(typeof(x));
-        /*Если строка более 30 знаков - то после 30го символа часть текста
-         скрывается и вместо них появляются три точки (...)*/
-        if(x.length > 30) {
-            x = x.substr(0, 30) + '...';
-          }
+let d = new Date();
+let n = d.getDay();
 
 
-   console.log(x);
-        }
-sTr('    123445335   ');
+for(let i=0; i<7; i++){
+  if (i !==n) {
+     let newP = document.createElement("p");
+        newP.innerHTML = "<i>"+week[i]+"</i>";
+        document.body.append(newP);
+  } else {
+    let newP = document.createElement("p");
+        newP.innerHTML = "<b>"+week[i]+"</b>";
+        document.body.append(newP);
+  }
+};
