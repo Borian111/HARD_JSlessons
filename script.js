@@ -1,7 +1,11 @@
 'use strict'
+let allTimes = function(){
+  let newP = document.createElement("p");
+  let newP2 = document.createElement("p");
+  newP.textContent="";
+  newP2.textContent="";
 
 let clock = function(){
-  
   let week = ['воскресенье ', 'понедельник ', 'вторник ', 'среда ', 'четверг ', 'пятница ', 'суббота '];
   let time = new Date;
   let year = time.getFullYear(),
@@ -14,10 +18,7 @@ let clock = function(){
   xHours='',
   xMin='',
   xSec='',
-  newP = document.createElement("p"),
-  newP2 = document.createElement("p"),
   ruMonth = ['января ', 'февраля ', 'марта ', 'апреля ', 'мая ', 'июня ', 'июля ', 'августа ', 'сентября ', 'октября ', 'ноября ', 'декабря '];
-  
   if(hours === 1||hours === 21){
     xHours = 'час';
   }else if(hours === 2||hours === 3||hours === 4||hours === 22||hours === 23||hours === 24){
@@ -48,3 +49,5 @@ let clock = function(){
 };
 
 setInterval(clock, 1000);
+};
+allTimes();
